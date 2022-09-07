@@ -1,10 +1,12 @@
-using UnityEngine;
+using System;
 
 public class SwitchPickup : Pickup
 {
+    public static event Action OnObstacleSwitch;
+
     protected override void PickupCollected()
     {
-        Debug.Log("Change the Obstacles");
+        OnObstacleSwitch?.Invoke();
         Destroy(gameObject);
     }
 }

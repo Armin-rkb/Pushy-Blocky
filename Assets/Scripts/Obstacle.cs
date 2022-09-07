@@ -1,7 +1,7 @@
 using UnityEngine;
 using ObstacleTypes;
 
-public class ObstacleBase : MonoBehaviour
+public class Obstacle : MonoBehaviour
 {
     [SerializeField]
     private ObstacleType obstacleType;
@@ -80,5 +80,43 @@ public class ObstacleBase : MonoBehaviour
                 ChangeColor(Color.cyan);
                 break;
         }
+    }
+
+    private void SetToPlayerColor()
+    {
+        SetObstacleType(ObstacleType.Positive);
+    }
+
+    private void SwitchType()
+    {
+        switch (obstacleType)
+        {
+            case ObstacleType.Neutral:
+                SetObstacleType(ObstacleType.Fixed);
+                break;
+            case ObstacleType.Positive:
+                SetObstacleType(ObstacleType.Hazardous);
+                break;
+            case ObstacleType.Hazardous:
+                SetObstacleType(ObstacleType.Positive);
+                break;
+            case ObstacleType.Fixed:
+                SetObstacleType(ObstacleType.Neutral);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void OnEnable()
+    {
+        SwitchPickup.OnObstacleSwitch += SwitchType;
+        PositivePickup.OnPositivePickup += SetToPlayerColor;
+    }
+
+    private void OnDisable()
+    {
+        SwitchPickup.OnObstacleSwitch -= SwitchType;
+        PositivePickup.OnPositivePickup -= SetToPlayerColor;
     }
 }
