@@ -19,13 +19,17 @@ public class PlayerController : MonoBehaviour
 
     public void OnPause(InputAction.CallbackContext context)
     {
-
     }
 
     void FixedUpdate()
     {
+        MovePlayer();
+    }
+
+    void MovePlayer()
+    {
         Vector3 currentVelocity = rb.velocity;
-        
+
         // Get our new direction.
         Vector2 newMoveDir = baseMoveDir + moveDir;
         Mathf.Clamp(moveDir.x, -1, 1);
@@ -40,5 +44,21 @@ public class PlayerController : MonoBehaviour
 
         // Add force to the changed velocity.
         rb.AddForce(velocityChange, ForceMode.Impulse);
+    }
+
+    void HidePlayer()
+    {
+        gameObject.GetComponent<Renderer>().enabled = false;
+    }
+
+    void ShowPlayer()
+    {
+        gameObject.GetComponent<Renderer>().enabled = true;
+    }
+
+    void StopPlayerMovement()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 }
