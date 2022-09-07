@@ -11,12 +11,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Object
+  - Object Collision Blocker
+  - Positive Obstacle
+  - Hazardous Obstacle
+  - Neutral Obstacle
+  - Fixed Obstacle
   - 
   - 
   - 

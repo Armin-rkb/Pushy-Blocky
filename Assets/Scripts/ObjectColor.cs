@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace ObstacleTypes
 {
     public enum ObstacleType
