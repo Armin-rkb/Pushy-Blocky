@@ -3,6 +3,12 @@ using ObstacleTypes;
 
 public class Obstacle : MonoBehaviour
 {
+    // Layermask
+    public const string positiveLayerMask = "Positive Obstacle";
+    public const string hazardousLayerMask = "Hazardous Obstacle";
+    public const string neutralLayerMask = "Neutral Obstacle";
+    public const string fixedLayerMask = "Fixed Obstacle";
+
     [SerializeField]
     private ObstacleType obstacleType;
 
@@ -32,18 +38,23 @@ public class Obstacle : MonoBehaviour
         {
             case ObstacleType.Neutral:
                 ChangeColor(Color.white);
+                gameObject.layer = LayerMask.NameToLayer(neutralLayerMask);
                 break;
             case ObstacleType.Positive:
                 ChangeColor(Color.blue);
+                gameObject.layer = LayerMask.NameToLayer(positiveLayerMask);
                 break;
             case ObstacleType.Hazardous:
                 ChangeColor(Color.red);
+                gameObject.layer = LayerMask.NameToLayer(hazardousLayerMask);
                 break;
             case ObstacleType.Fixed:
                 ChangeColor(Color.grey);
+                gameObject.layer = LayerMask.NameToLayer(fixedLayerMask);
                 break;
             default:
                 ChangeColor(Color.cyan);
+                Debug.LogError("Invalid Object Type");
                 break;
         }
     }

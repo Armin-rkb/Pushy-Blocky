@@ -459,9 +459,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.5146973, y: 0.034899473, z: 5.213646}
+    m_Target: {x: 40.55384, y: 241.48344, z: -27.975372}
     speed: 2
-    m_Value: {x: 2.5146973, y: 0.034899473, z: 5.213646}
+    m_Value: {x: 40.55384, y: 241.48344, z: -27.975372}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -507,13 +507,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.22522418, y: 0.37152267, z: -0.087001175, w: 0.89649266}
+    m_Target: {x: -0.29586807, y: -0.26463103, z: 0.079398, w: -0.91442883}
     speed: 2
-    m_Value: {x: 0.22522154, y: 0.3715183, z: -0.08700016, w: 0.89648217}
+    m_Value: {x: -0.29586044, y: -0.2646242, z: 0.07939596, w: -0.9144053}
   m_Size:
-    m_Target: 2.9296157
+    m_Target: 53.30199
     speed: 2
-    m_Value: 2.9296157
+    m_Value: 53.30199
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -621,23 +621,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3a6bfeff326bfeff
-      m_LastClickedID: -103630
-      m_ExpandedIDs: 426bfeff8214ffffd460ffff92e9ffff9ce9ffff2cfbffff
+      m_SelectedIDs: dabafcff
+      m_LastClickedID: -214310
+      m_ExpandedIDs: 68b8fcffdabafcff0674fdffaeaafdff426bfeff8214ffffd460ffff92e9ffff9ce9ffffa4f8ffff2cfbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: PauseButton
+        m_OriginalName: PauseButton
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -214310
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -715,38 +715,38 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/UI
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/UI
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\Projects\Blocky-Pushy
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ee5e0000
-    m_LastClickedID: 24302
-    m_ExpandedIDs: 00000000ee5e0000f05e0000
+    m_SelectedIDs: ecdf0000
+    m_LastClickedID: 57324
+    m_ExpandedIDs: 00000000ee5e0000f05e0000225f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Obstacle Types
+      m_OriginalName: Obstacle Types
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 24348
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -783,8 +783,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3a6bfeff326bfeff
-    m_LastClickedInstanceID: -103622
+    m_SelectedInstanceIDs: dabafcff
+    m_LastClickedInstanceID: -214310
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:

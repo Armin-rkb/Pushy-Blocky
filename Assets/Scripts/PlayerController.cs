@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,16 +18,12 @@ public class PlayerController : MonoBehaviour
         moveDir = context.ReadValue<Vector2>();
     }
 
-    public void OnPause(InputAction.CallbackContext context)
-    {
-    }
-
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         MovePlayer();
     }
 
-    void MovePlayer()
+    private void MovePlayer()
     {
         Vector3 currentVelocity = rb.velocity;
 
@@ -46,19 +43,35 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(velocityChange, ForceMode.Impulse);
     }
 
-    void HidePlayer()
+    private void HidePlayer()
     {
         gameObject.GetComponent<Renderer>().enabled = false;
     }
 
-    void ShowPlayer()
+    private void ShowPlayer()
     {
         gameObject.GetComponent<Renderer>().enabled = true;
     }
 
-    void StopPlayerMovement()
+    private void StopPlayerMovement()
     {
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+    }
+
+    private void ResetPlayer()
+    {
+        StopPlayerMovement();
+        rb.position = Vector3.zero;
+    }
+
+    private void OnEnable()
+    {
+        GameController.OnStartGame += ResetPlayer;
+    }
+
+    private void OnDisable()
+    {
+        GameController.OnStartGame -= ResetPlayer;
     }
 }

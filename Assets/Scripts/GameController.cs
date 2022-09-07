@@ -14,16 +14,18 @@ public class GameController : MonoBehaviour
         OnStartGame?.Invoke();
     }
 
-    void PauseGame()
+    public void PauseGame()
     {
         // Pause the game, show UI with option to restart.
         OnPauseGame?.Invoke();
+        Time.timeScale = 0;
     }
 
-    void ResumeGame()
+    public void ResumeGame()
     {
         // Hide pause UI and resume gameplay.
         OnResumeGame?.Invoke();
+        Time.timeScale = 1;
     }
 
     void EndGame()
