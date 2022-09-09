@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class PauseButton : MonoBehaviour
@@ -12,8 +11,9 @@ public class PauseButton : MonoBehaviour
     private void HidePauseScreen()
     {
         if (!pauseButton || !pauseScreen) return;
+
         pauseScreen.SetActive(false);
-        pauseButton.SetActive(false);
+        ShowPauseButton();
     }    
     
     private void ShowPauseScreen()
@@ -21,17 +21,33 @@ public class PauseButton : MonoBehaviour
         if (!pauseButton || !pauseScreen) return;
 
         pauseScreen.SetActive(true);
+        HidePauseButton();
+    }
+
+    private void HidePauseButton()
+    {
+        pauseButton.SetActive(false);
+    }
+
+    private void ShowPauseButton()
+    {
         pauseButton.SetActive(true);
     }
 
     private void OnEnable()
     {
+        GameController.OnStartGame += ShowPauseButton;
+        GameController.OnGameWon += HidePauseButton;
+        GameController.OnGameOver += HidePauseButton;
         GameController.OnPauseGame += HidePauseScreen;
         GameController.OnPauseGame += ShowPauseScreen;
     }
 
     private void OnDisable()
     {
+        GameController.OnStartGame -= ShowPauseButton;
+        GameController.OnGameWon -= HidePauseButton;
+        GameController.OnGameOver -= HidePauseButton;
         GameController.OnPauseGame -= HidePauseScreen;
         GameController.OnPauseGame -= ShowPauseScreen;
     }

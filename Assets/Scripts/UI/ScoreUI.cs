@@ -1,8 +1,11 @@
 using TMPro;
+using System;
 using UnityEngine;
 
 public class ScoreUI : MonoBehaviour
 {
+    public static event Action<int> OnScoreUpdated;
+
     private int currentScore;
     
     [SerializeField]
@@ -18,6 +21,8 @@ public class ScoreUI : MonoBehaviour
     {
         currentScore += val;
         UpdateScore();
+
+        OnScoreUpdated?.Invoke(currentScore);
     }
 
     void UpdateScore()
@@ -27,11 +32,13 @@ public class ScoreUI : MonoBehaviour
 
     private void OnEnable()
     {
+        GameController.OnStartGame += ResetScore;
         PointPickup.OnPointCollected += IncreaseScore;
     }
 
     private void OnDisable()
     {
+        GameController.OnStartGame -= ResetScore;
         PointPickup.OnPointCollected -= IncreaseScore;
     }
 

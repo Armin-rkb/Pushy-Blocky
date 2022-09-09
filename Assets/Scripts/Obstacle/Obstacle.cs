@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 using ObstacleTypes;
 
 public class Obstacle : MonoBehaviour
 {
+    public static event Action OnHazardousHit;
+
     // Layermask
     public const string positiveLayerMask = "Positive Obstacle";
     public const string hazardousLayerMask = "Hazardous Obstacle";
@@ -71,21 +74,20 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (!coll.gameObject.CompareTag("Player")) return;
+        if (!coll.gameObject.CompareTag(Tags.playerTag)) return;
 
+        // For the current project only hazardous needs a collision respondse.
+        // This is more to showcase the posibility of easily adding: Sound, FX, Events.
         switch (obstacleType)
         {
             case ObstacleType.Neutral:
-                Debug.Log("Nothing!");
                 break;
             case ObstacleType.Positive:
-                Debug.Log("Push!");
                 break;
             case ObstacleType.Hazardous:
-                Debug.LogError("Player Dead!");
+                OnHazardousHit?.Invoke();
                 break;
             case ObstacleType.Fixed:
-                Debug.LogWarning("Immovable!");
                 break;
             default:
                 ChangeColor(Color.cyan);
@@ -103,7 +105,7 @@ public class Obstacle : MonoBehaviour
         switch (obstacleType)
         {
             case ObstacleType.Neutral:
-                SetObstacleType(ObstacleType.Fixed);
+                SetObstacleType(ObstacleType.Positive);
                 break;
             case ObstacleType.Positive:
                 SetObstacleType(ObstacleType.Hazardous);

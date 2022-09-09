@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: LevelData
   m_EditorClassIdentifier: 
   levelChunkPrefab:
-  - {fileID: 4387529084587272013, guid: 2991b3ed03eb7e747be376fe3e5e94ef, type: 3}
+  - {fileID: 6825601092661417022, guid: b854b1536e938394587f87d47ccb55ec, type: 3}
   - {fileID: 1289462841007889930, guid: 531502c3fa4d2774096ed8d43566e373, type: 3}
   - {fileID: 1289462841007889930, guid: 531502c3fa4d2774096ed8d43566e373, type: 3}
   - {fileID: 4387529084587272013, guid: 2991b3ed03eb7e747be376fe3e5e94ef, type: 3}
+  - {fileID: 6895588378760599563, guid: 362f361b65391294db455cafeb7227bc, type: 3}
+  - {fileID: 6895588378760599563, guid: c5af53956cba93f48a6b53dac6958ed7, type: 3}
+  - {fileID: 6895588378760599563, guid: 5e88330e43d58a9498fc1a5ede37c4e1, type: 3}
+  - {fileID: 6895588378760599563, guid: 909938fa7590ab940af85fc529a3a784, type: 3}
   - {fileID: 3244675901800017399, guid: b0d7c560146be7f4ab0fd921161f5eef, type: 3}
-  PositiveColor: {r: 0.2981043, g: 0.37652457, b: 0.8207547, a: 0}
-  HazardousColor: {r: 0.8962264, g: 0.2240566, b: 0.2240566, a: 0}

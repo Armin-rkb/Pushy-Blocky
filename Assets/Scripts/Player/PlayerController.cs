@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -43,35 +42,20 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(velocityChange, ForceMode.Impulse);
     }
 
-    private void HidePlayer()
+    private void DisablePlayer()
     {
-        gameObject.GetComponent<Renderer>().enabled = false;
-    }
-
-    private void ShowPlayer()
-    {
-        gameObject.GetComponent<Renderer>().enabled = true;
-    }
-
-    private void StopPlayerMovement()
-    {
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-    }
-
-    private void ResetPlayer()
-    {
-        StopPlayerMovement();
-        rb.position = Vector3.zero;
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
-        GameController.OnStartGame += ResetPlayer;
+        GameController.OnGameWon += DisablePlayer;
+        GameController.OnGameOver += DisablePlayer;
     }
 
     private void OnDisable()
     {
-        GameController.OnStartGame -= ResetPlayer;
+        GameController.OnGameWon -= DisablePlayer;
+        GameController.OnGameOver -= DisablePlayer;
     }
 }
